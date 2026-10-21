@@ -1,5 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { PrismaService } from '../../prisma/prisma.service';
+import { toPublicUser } from '../../common/mappers/to-public-user';
 
 @Injectable()
 export class ClassesService {
@@ -40,7 +41,10 @@ export class ClassesService {
     return {
       statusCode: 200,
       message: 'Lấy thông tin chi tiết lớp thành công',
-      data: classInfo,
+      data: {
+        ...classInfo,
+        teacher: classInfo.teacher ? toPublicUser(classInfo.teacher) : null,
+      },
       meta: null,
     };
   }

@@ -10,9 +10,8 @@ import { StudentsModule } from './modules/students/students.module';
 import { AuditModule } from './modules/audit/audit.module';
 import { HealthModule } from './health/health.module';
 
-import { APP_INTERCEPTOR, APP_GUARD } from '@nestjs/core';
+import { APP_INTERCEPTOR } from '@nestjs/core';
 import { AuditInterceptor } from './common/interceptors/audit.interceptor';
-import { RolesGuard } from './modules/auth/guards/roles.guard';
 
 @Module({
   imports: [
@@ -32,10 +31,6 @@ import { RolesGuard } from './modules/auth/guards/roles.guard';
     {
       provide: APP_INTERCEPTOR,
       useClass: AuditInterceptor,
-    },
-    {
-      provide: APP_GUARD,
-      useClass: RolesGuard,
     },
   ],
 })

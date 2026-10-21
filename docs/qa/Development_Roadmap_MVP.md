@@ -71,6 +71,8 @@ Mục tiêu: đưa nền tảng chạm `GAP` đầu tiên gây rủi ro bảo m�
 
 Đây là **module lớn nhất còn thiếu**. Tạo mới theo pattern `categories`/`students`.
 
+> **Hướng dẫn thực hiện chi tiết cho DEV:** `docs/qa/DEV_GUIDE_Phase_B_Scheduling.md` — phạm vi B1–B6, endpoint + role, quy tắc conflict, test case mapping, DoD.
+
 **B1. Schema & migration** (`prisma/schema.prisma`)
 - `Session` đã có (`classId, roomId, startTime, endTime, status, topicNote`).
 - Bổ sung cột lưu lịch sử dời: bảng `SessionChange` (`sessionId, changedBy, fromStart, toStart, reason, createdAt`) hoặc dùng `AuditLog`. → khuyến nghị bảng riêng cho truy vấn.

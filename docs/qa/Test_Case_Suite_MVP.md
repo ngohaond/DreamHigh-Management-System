@@ -188,10 +188,10 @@ Endpoint: `GET /api/classes/:code`.
 
 | TC ID | Loại | Ưu tiên | Mô tả | Bước | Kết quả mong đợi | Trace | Trạng thái | Test file |
 |---|---|---|---|---|---|---|---|---|
-| 4.1-TC-01 | Positive | P1 | Lấy chi tiết lớp theo mã | GET /classes/PY-K1-01 | Đủ course/teacher/sessions/enrollments/exams | `classes.service.getClassDetails` | HAS-CODE | `classes.service.spec.ts` |
-| 4.1-TC-02 | Negative | P1 | Mã lớp không tồn tại | GET /classes/XXXX | 404 | `getClassDetails` | HAS-CODE | cùng file |
+| 4.1-TC-01 | Positive | P1 | Lấy chi tiết lớp theo mã | GET /classes/PY-K1-01 | Đủ course/teacher/sessions/enrollments/exams | `classes.service.getClassDetails` | DONE-CODE | `classes.service.spec.ts` |
+| 4.1-TC-02 | Negative | P1 | Mã lớp không tồn tại | GET /classes/XXXX | 404 | `getClassDetails` | DONE-CODE | cùng file |
 | 4.1-TC-03 | Security | P0 | Teacher lớp khác xem chi tiết | Token GV không dạy lớp | 403 | NFR5 | GAP | — |
-| 4.1-TC-04 | Security | P0 | Rò `passwordHash` qua teacher include | GET details | `teacher` chỉ field public | to-public-user | GAP | cùng file |
+| 4.1-TC-04 | Security | P0 | Rò `passwordHash` qua teacher include | GET details | `teacher` chỉ field public | to-public-user | DONE-CODE | cùng file |
 
 ### Story 4.2 — Điểm danh (FR13)
 
